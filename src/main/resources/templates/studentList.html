@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet">
+</head>
+<style>
+    body{
+        background-color: beige;
+        font-size: 30px;
+        font-family: 楷体;
+    }
+    a{
+        text-decoration: none;
+        color: #72de6e;
+        font-size: 25px;
+    }
+    a:hover{
+        color: #de232c;
+    }
+    #d1{
+        margin: 0;
+        float: right;
+    }
+    table{
+        margin-top: 30px;
+    }
+</style>
+<body>
+<div id="d1">
+    <a href="addStudent.html">添加</a>
+</div>
+
+<table>
+    <tr style="text-align: center;font-size: 40px;">
+    <td>序号</td>
+    <td>姓名</td>
+    <td>性别</td>
+    <td>年龄</td>
+    <td>简介</td>
+    <td>操作</td>
+    </tr>
+    <tr th:each="student,studentStat:${list}" style="text-align: center">
+        <td th:text="${studentStat.count}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.six}"></td>
+        <td th:text="${student.age}"></td>
+        <td th:text="${student.memo}"></td>
+        <td><a th:href="@{'editStudent.html?id=' + ${student.id}}">修改</a>/<a th:href="@{'delStudent.do?id=' + ${student.id}}">删除</a></td>
+    </tr>
+</table>
+</body>
+</html>

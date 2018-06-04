@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet">
+</head>
+<style>
+    body{
+        background-color: beige;
+    }
+    p{
+        font-size: 20px;
+
+    }
+</style>
+<body>
+<form method="post" id="id_form" action="/addStudent.do" th:object="${Student}">
+    <div>
+        <label>姓名：</label>
+        <input type="text" id="name" name="name"/>
+    </div>
+    <div>
+        <label>年龄：</label>
+        <input type="text" id="age" name="age" />
+    </div>
+    <div>
+        <label>性别：</label>
+        <input name="six" type="radio" value="男" >男</label>
+        <input name="six" type="radio" value="女" >女</label>
+    </div>
+    <div>
+        <label>简介：</label>
+        <input type="text" id="memo" name="memo" />
+    </div>
+    <div >
+        <button class="btn btn-primary" type="submit">提交</button>
+        <button class="btn btn-white" type="reset">重置</button>
+    </div>
+
+</form>
+</body>
+</html>
+
+
+
+
